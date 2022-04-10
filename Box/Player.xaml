@@ -6,7 +6,5 @@
              xmlns:local="clr-namespace:Box"
              mc:Ignorable="d" 
              d:DesignHeight="128" d:DesignWidth="128">
-    <UserControl.Background>
-        <ImageBrush ImageSource="1.png"/>
-    </UserControl.Background>
+
 </UserControl>

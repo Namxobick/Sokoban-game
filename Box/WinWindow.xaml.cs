@@ -17,6 +17,8 @@ namespace Box
         public EndWindow(string level, int movesCount, int movesCountForOneStar, int movesCountForTwoStars, int movesCountForThreeStars)
         {
             InitializeComponent();
+            restart.Fill = new ImageBrush(new BitmapImage(new Uri(@"restart.png", UriKind.Relative)));
+            nextLevel.Fill = new ImageBrush(new BitmapImage(new Uri(@"next.png", UriKind.Relative)));
 
             _levelLabel.Content = level;
 
@@ -32,27 +34,27 @@ namespace Box
 
             if (movesCount <= movesCountForThreeStars)
             {
-                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
+                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
             }
             else if (movesCount <= movesCountForTwoStars)
             {
-                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
+                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
             }
             else if (movesCount <= movesCountForOneStar)
             {
-                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
-                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
+                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
+                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
             }
             else
             {
-                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
-                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
-                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
+                _star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
+                _star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
+                _star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
 
                 nextLevel.MouseLeftButtonDown -= NextLevelMouseLeftButtonDown;
                 nextLevel.MouseEnter -= NextLevelMouseEnter;

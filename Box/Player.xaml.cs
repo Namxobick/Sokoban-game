@@ -15,6 +15,7 @@ namespace Box
         {
             _transform = new Transform();
             _movePlayer = new MovePlayer(_transform);
+            Background = new ImageBrush(new BitmapImage(new Uri(@"1.png", UriKind.Relative)));
             Width = 128;
             Height = 128;
             InitializeComponent();
@@ -28,16 +29,16 @@ namespace Box
                 switch (_transform.TargetDirection)
                 {
                     case Transform.Direction.Up:
-                        Background = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/4.png", UriKind.Relative)));
+                        Background = new ImageBrush(new BitmapImage(new Uri(@"4.png", UriKind.Relative)));
                         break;
                     case Transform.Direction.Down:
-                        Background = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/3.png", UriKind.Relative)));
+                        Background = new ImageBrush(new BitmapImage(new Uri(@"3.png", UriKind.Relative)));
                         break;
                     case Transform.Direction.Left:
-                        Background = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/2.png", UriKind.Relative)));
+                        Background = new ImageBrush(new BitmapImage(new Uri(@"2.png", UriKind.Relative)));
                         break;
                     case Transform.Direction.Right:
-                        Background = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/1.png", UriKind.Relative)));
+                        Background = new ImageBrush(new BitmapImage(new Uri(@"1.png", UriKind.Relative)));
                         break;
                     default:
                         break;

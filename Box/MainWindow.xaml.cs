@@ -25,7 +25,7 @@ namespace Box
         public MainWindow()
         {
             InitializeComponent();
-            mainGrid.Background = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/Ананас.jpg", UriKind.Relative)));
+            mainGrid.Background = new ImageBrush(new BitmapImage(new Uri(@"Ананас.jpg", UriKind.Relative)));
 
             CreateReactangle(ref _rect, Brushes.Black, 0, 0, this.Width, 60);
             _rect.Fill = Brushes.LightSeaGreen;
@@ -46,12 +46,12 @@ namespace Box
             _myProgressBar.Margin = new Thickness(200, 10, 0, 0);
             grid.Children.Add(_myProgressBar);
 
-            CreateReactangle(ref _restartLevel, null, 90, 5, 50, 50, new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/restart.png", UriKind.Relative))));
+            CreateReactangle(ref _restartLevel, null, 90, 5, 50, 50, new ImageBrush(new BitmapImage(new Uri(@"restart.png", UriKind.Relative))));
             _restartLevel.MouseLeftButtonDown += RestartLevelMouseLeftButtonDown;
             _restartLevel.MouseEnter += RestartLevelMouseEnter;
             _restartLevel.MouseLeave += RestartLevelMouseLeave;
 
-            CreateReactangle(ref _goToMenu, null, 15, 5, 50, 50, new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/menu.png", UriKind.Relative))));
+            CreateReactangle(ref _goToMenu, null, 15, 5, 50, 50, new ImageBrush(new BitmapImage(new Uri(@"menu.png", UriKind.Relative))));
             _goToMenu.MouseEnter += GoToMenuMouseEnter;
             _goToMenu.MouseLeave += GoToMenuMouseLeave;
 

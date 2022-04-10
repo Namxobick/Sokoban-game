@@ -10,6 +10,8 @@
         <ImageBrush ImageSource="Barell.png"/>
     </UserControl.Background>
     <Grid>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="Barell.png"/>
+        </Grid.Background>
     </Grid>
 </UserControl>

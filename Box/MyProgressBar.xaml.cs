@@ -64,9 +64,9 @@ namespace Box
             star2.Margin = new Thickness(_step * (maxValue - valueStar2) - 12, 25, 0, 0);
             star3.Margin = new Thickness(_step * (maxValue - valueStar3) - 12, 25, 0, 0);
 
-            star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-            star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
-            star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star+.png", UriKind.Relative)));
+            star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+            star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
+            star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"star+.png", UriKind.Relative)));
 
             line1.Margin = new Thickness(_step * (maxValue - valueStar1), 0, 0, 0);
             line2.Margin = new Thickness(_step * (maxValue - valueStar2), 0, 0, 0);
@@ -97,11 +97,11 @@ namespace Box
             };
 
             if (value > _valueStar3)
-                star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
+                star3.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
             if (value > _valueStar2)
-                star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
+                star2.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
             if (value > _valueStar1)
-                star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"C:/Users/Namxobick/source/repos/Box/star-.png", UriKind.Relative)));
+                star1.Fill = new ImageBrush(new BitmapImage(new Uri(@"star-.png", UriKind.Relative)));
         }
     }
 }

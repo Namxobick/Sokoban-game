@@ -15,21 +15,9 @@
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Rectangle x:Name="star1" HorizontalAlignment="Left" Height="25" Margin="20,25,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="25">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="star+.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="star2" HorizontalAlignment="Left" Height="25" Margin="45,25,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="26">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="star+.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="star3" HorizontalAlignment="Left" Height="25" Margin="71,25,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="24" RenderTransformOrigin="-0.25,0.44">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="star+.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
+        <Rectangle x:Name="star1" HorizontalAlignment="Left" Height="25" Margin="20,25,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="25" Fill="{x:Null}"/>
+        <Rectangle x:Name="star2" HorizontalAlignment="Left" Height="25" Margin="45,25,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="26" Fill="{x:Null}"/>
+        <Rectangle x:Name="star3" HorizontalAlignment="Left" Height="25" Margin="71,25,0,0" RadiusY="15" RadiusX="15" VerticalAlignment="Top" Width="24" RenderTransformOrigin="-0.25,0.44" Fill="{x:Null}"/>
         <Rectangle x:Name="line3" HorizontalAlignment="Left" Height="24" Margin="83,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" Fill="Black"/>
         <Rectangle x:Name="line2" HorizontalAlignment="Left" Height="24" Margin="57,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" Fill="Black"/>
         <Rectangle x:Name="line1" HorizontalAlignment="Left" Height="24" Margin="32,1,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" Fill="Black"/>

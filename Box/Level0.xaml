@@ -13,62 +13,57 @@
         </Grid.ColumnDefinitions>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="128,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="256,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="384 ,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="512,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="640,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="768,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="896,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1024,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1152,0,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="0,128,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="128,128,0,0" Grid.ColumnSpan="2">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="Floor1.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="256,128,0,0" Grid.ColumnSpan="2">
@@ -108,12 +103,12 @@
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1152,128,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="0,256,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="128,256,0,0" Grid.ColumnSpan="2">
@@ -158,12 +153,12 @@
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1152,256,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="0,384,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="128,384,0,0" Grid.ColumnSpan="2">
@@ -208,60 +203,66 @@
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1152,384,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="0,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="128,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="256,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="384,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="512,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="640,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="768,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="896,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1024,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="1152,512,0,0" Grid.ColumnSpan="2">
             <Rectangle.Fill>
-                <ImageBrush ImageSource="BorderBoxpng.png"/>
+                <ImageBrush ImageSource="BorderBox.png"/>
             </Rectangle.Fill>
         </Rectangle>
         <Ellipse HorizontalAlignment="Left" Height="64" Margin="928 ,288,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="64" Fill="#FFDAC816" Grid.ColumnSpan="2"/>
         <Ellipse Grid.ColumnSpan="2" Fill="#FFDAC816" HorizontalAlignment="Left" Height="64" Margin="160,160,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.664,1.109"/>
+        <Rectangle HorizontalAlignment="Left" Height="128" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="128" RenderTransformOrigin= "0,0 " Margin="128,128,0,0" Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="Floor1.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Ellipse HorizontalAlignment="Left" Height="64" Margin="160,160,0,0" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="64" Fill="#FFDAC816" Grid.ColumnSpan="2"/>
     </Grid>
 </UserControl>
