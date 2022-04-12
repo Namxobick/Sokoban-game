@@ -1,35 +1,33 @@
-﻿using System;
+﻿using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Threading;
 
 namespace Box
 {
     class MotionAnimation
     {
-        DispatcherTimer _timer;
         Transform _transform;
-        int _distanceX, _distanceY, _numberOfFrames;
-        public MotionAnimation(Transform transform, int distanceX, int distanceY, int interval = 15, int numberOfFrames = 8)
+        double _distanceX, _distanceY;
+        int _numberOfFrames;
+        public MotionAnimation(Transform transform, int distanceX, int distanceY, int interval = 5, int numberOfFrames = 15)
         {
             _transform = transform;
             _numberOfFrames = numberOfFrames;
-            _distanceX = distanceX / numberOfFrames;
+            _distanceX = distanceX / (double)numberOfFrames;
+            _distanceY = distanceY / (double)numberOfFrames;
 
-            _distanceY = distanceY / numberOfFrames;
-            _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromMilliseconds(interval);
-            _timer.Tick += TimerTick;
-            _timer.Start();
-
+            var task = Animate(interval);
         }
 
-        private void TimerTick(object sender, EventArgs e)
+        private async Task Animate(int interval)
         {
-            _transform.Position = new Point(_transform.Position.X + _distanceX, _transform.Position.Y + _distanceY);
-            _numberOfFrames--;
-            if (_numberOfFrames == 0)
-                _timer.Stop();
+            while (_numberOfFrames != 0)
+            {
+                _transform.Position = new Point(_transform.Position.X + _distanceX, _transform.Position.Y + _distanceY);
+                _numberOfFrames--;
+                await Task.Delay(interval);
+            }
         }
+
     }
 
 }

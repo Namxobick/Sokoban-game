@@ -9,11 +9,13 @@ namespace Box
         private static CellState[,] _map;
         private static List<(int, int)> _winCell;
 
+        private static bool _gameEnd;
+
         public static int _movesForThreeStars = 0, _movesForTwoStars = 0, _movesForOneStar = 0;
 
         public static int MovesCount = 0;
 
-        public static Action GameWin;
+        public static Action GameEnd;
 
         public delegate void ChangeMovesCountsHandler(int message);
         public static event ChangeMovesCountsHandler OnMovesCountsChanged;
@@ -21,7 +23,8 @@ namespace Box
         public static void SetMap(CellState[,] map)
         {
             _map = map;
-            MovesCount = 0;   
+            MovesCount = 0;
+            _gameEnd = false;
         }
             
         public static void SetWinCell(List<(int, int)> winCell)
@@ -41,15 +44,17 @@ namespace Box
             _map[oldI, oldJ] = CellState.Free;
             _map[newI, newJ] = CellState.Player;
             MovesCount++;
-
             OnMovesCountsChanged.Invoke(MovesCount);
-            ChekingEndGame();
+
+            ChekingOnLoseGame();
         }
+
 
         public static void UpdateBarrelCell(int oldI, int oldJ, int newI, int newJ)
         {
             _map[oldI, oldJ] = CellState.Free;
-            _map[newI, newJ] = CellState.Box;             
+            _map[newI, newJ] = CellState.Box;
+            ChekingOnWinGame();
         }
 
         public static CellState InfoCell(int i, int j)
@@ -57,17 +62,18 @@ namespace Box
             return _map[i, j];
         }
 
-        public static void ChekingEndGame()
+        private static void ChekingOnLoseGame()
         {
-            bool gameEnd = false;
-
-            if (MovesCount > _movesForOneStar)
+            if (MovesCount > _movesForOneStar && !_gameEnd)
             {
                 InputSystem.Clear();
-                GameWin?.Invoke();
-                gameEnd = true;
+                GameEnd?.Invoke();
+                _gameEnd = true;
             }
+        }
 
+        public static void ChekingOnWinGame()
+        {
             bool isGameWin = true;
 
             foreach (var item in _winCell)
@@ -78,10 +84,11 @@ namespace Box
                     return;
                 }
             }
-            if (isGameWin && !gameEnd)
+            if (isGameWin && !_gameEnd)
             {
                 InputSystem.Clear();
-                GameWin?.Invoke();
+                GameEnd?.Invoke();
+                _gameEnd = true;
             }
         }
     }

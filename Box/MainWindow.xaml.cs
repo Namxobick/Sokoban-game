@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -11,10 +12,12 @@ namespace Box
     public partial class MainWindow : Window
     {
         private EndWindow _endWindow;
+
+        private List<Ilevel> _levels;
         private Level0 _level0;
         private Level1 _level1;
+
         private Player _player;
-        private Barrel _barrel1, _barrel2, _barrel3, _barrel4;
         private Rectangle _goToMenu, _restartLevel;
         private Rectangle _rect;
         private Label _movesCounts;
@@ -25,12 +28,20 @@ namespace Box
         public MainWindow()
         {
             InitializeComponent();
+
+            _levels = new List<Ilevel>();
+            _level0 = new Level0();
+            _level1 = new Level1();
+
+            _levels.Add(_level0);
+            _levels.Add(_level1);
+
             mainGrid.Background = new ImageBrush(new BitmapImage(new Uri(@"Ананас.jpg", UriKind.Relative)));
 
             CreateReactangle(ref _rect, Brushes.Black, 0, 0, this.Width, 60);
             _rect.Fill = Brushes.LightSeaGreen;
 
-            LoadLevel0();
+            LoadLevel();
 
             _movesCounts = new Label();
             _movesCounts.FontFamily = new FontFamily("Georgia");
@@ -55,7 +66,7 @@ namespace Box
             _goToMenu.MouseEnter += GoToMenuMouseEnter;
             _goToMenu.MouseLeave += GoToMenuMouseLeave;
 
-            GameMap.GameWin += GameEnd;
+            GameMap.GameEnd += GameEnd;
             GameMap.OnMovesCountsChanged += DrawMovesCountsAndProgressBar;
         }
 
@@ -70,19 +81,9 @@ namespace Box
             BlurEffect meef = new BlurEffect();
             meef.Radius = 10;
             grid.Effect = meef;
-            switch (_levelNow)
-            {
-                case 0:
-                    _endWindow = new EndWindow(_levelNow.ToString(), GameMap.MovesCount, _level0.GetMovesForOneStar(), _level0.GetMovesForTwoStars(), _level0.GetMovesForThreeStars());
-                    break;
 
-                case 1:
-                    _endWindow = new EndWindow(_levelNow.ToString(), GameMap.MovesCount, _level1.GetMovesForOneStar(), _level1.GetMovesForTwoStars(), _level1.GetMovesForThreeStars());
-                    break;
+            _endWindow = new EndWindow(_levelNow.ToString(), GameMap.MovesCount, _levels[_levelNow].GetMovesForOneStar(), _levels[_levelNow].GetMovesForTwoStars(), _levels[_levelNow].GetMovesForThreeStars());
 
-                default:
-                    break;
-            }
             mainGrid.Children.Add(_endWindow);
 
 
@@ -104,70 +105,42 @@ namespace Box
             Restart();
         }
 
-        private void LoadLevel0()
+        private void LoadLevel()
         {
-            _level0 = new Level0();
-            _barrel1 = new Barrel();
-            _barrel2 = new Barrel();
             _player = new Player();
 
-            _level0.OnInitPlayer += _player.SetPosition;
-            _level0.OnInitBarrel1 += _barrel1.SetPosition;
-            _level0.OnInitBarrel2 += _barrel2.SetPosition;
+            if (_levels.Count <= _levelNow)
+            {
+                Console.WriteLine("Only two levels");
+                _levelNow = 0;
+            }
 
-            _level0.Margin = new Thickness(0, 60, 0, 0);
-            _level0.Load();
-            grid.Children.Add(_level0);
+            List<Position> _objectPositions = _levels[_levelNow].GetObjectsPositions();
+            List<Barrel> barrels = new List<Barrel>();
+
+            _levels[_levelNow].Load();
+            ((UserControl)_levels[_levelNow]).Margin = new Thickness(0, 60, 0, 0);
+            grid.Children.Add((UserControl)_levels[_levelNow]);
+
+            for (int i = 1; i < _objectPositions.Count; i++)
+            {
+                barrels.Add(new Barrel());
+                barrels[i - 1].SetPosition(_objectPositions[i].VisualMarginLeft, _objectPositions[i].VisualMarginRight, _objectPositions[i].PositionIOnMap, _objectPositions[i].PositionJOnMap);
+                grid.Children.Add(barrels[i - 1]);
+            }
+
+            _player.SetPosition(_objectPositions[0].VisualMarginLeft, _objectPositions[0].VisualMarginRight, _objectPositions[0].PositionIOnMap, _objectPositions[0].PositionJOnMap);
             grid.Children.Add(_player);
-            grid.Children.Add(_barrel1);
-            grid.Children.Add(_barrel2);
 
-
-            GameMap.SetMap(_level0.GetMap());
-            GameMap.SetWinCell(_level0.GetWinCell());
-            GameMap.SetMovesForStar(_level0.GetMovesForOneStar(), _level0.GetMovesForTwoStars(), _level0.GetMovesForThreeStars());
+            GameMap.SetMap(_levels[_levelNow].GetMap());
+            GameMap.SetWinCell(_levels[_levelNow].GetWinCell());
+            GameMap.SetMovesForStar(_levels[_levelNow].GetMovesForOneStar(), _levels[_levelNow].GetMovesForTwoStars(), _levels[_levelNow].GetMovesForThreeStars());
 
             this.KeyDown += InputSystem.PlayerKeyDown;
 
-            this.Width = _level0.Width + 15;
-            this.Height = _level0.Height + 90;
-        }
+            this.Width = ((UserControl)_levels[_levelNow]).Width + 15;
+            this.Height = ((UserControl)_levels[_levelNow]).Height + 99;
 
-        private void LoadLevel1()
-        {
-            _level1 = new Level1();
-            _barrel1 = new Barrel();
-            _barrel2 = new Barrel();
-            _barrel3 = new Barrel();
-            _barrel4 = new Barrel();
-            _player = new Player();
-
-            _level1.OnInitPlayer += _player.SetPosition;
-
-            _level1.OnInitBarrel1 += _barrel1.SetPosition;
-            _level1.OnInitBarrel2 += _barrel2.SetPosition;
-            _level1.OnInitBarrel3 += _barrel3.SetPosition;
-            _level1.OnInitBarrel4 += _barrel4.SetPosition;
-
-            _level1.Margin = new Thickness(0, 60, 0, 0);
-            _level1.Load();
-            grid.Children.Add(_level1);
-            grid.Children.Add(_player);
-
-            grid.Children.Add(_barrel1);
-            grid.Children.Add(_barrel2);
-            grid.Children.Add(_barrel3);
-            grid.Children.Add(_barrel4);
-
-
-            GameMap.SetMap(_level1.GetMap());
-            GameMap.SetWinCell(_level1.GetWinCell());
-            GameMap.SetMovesForStar(_level1.GetMovesForOneStar(), _level1.GetMovesForTwoStars(), _level1.GetMovesForThreeStars());
-
-            this.KeyDown += InputSystem.PlayerKeyDown;
-
-            this.Width = _level1.Width + 15;
-            this.Height = _level1.Height + 99;
         }
 
         private void RestartLevelMouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
@@ -175,7 +148,6 @@ namespace Box
             BlurEffect meef = new BlurEffect();
             meef.Radius = 0;
             _restartLevel.Effect = meef;
-            
         }
         private void RestartLevelMouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -229,21 +201,9 @@ namespace Box
             grid.Children.Add(_movesCounts);
             grid.Children.Add(_myProgressBar);
             grid.Children.Add(_goToMenu);
-            grid.Children.Add(_restartLevel);         
+            grid.Children.Add(_restartLevel);
 
-            switch (_levelNow)
-            {
-                case 0:
-                    LoadLevel0();
-                    break;
-
-                case 1:
-                    LoadLevel1();
-                    break;
-
-                default:
-                    break;
-            }
+            LoadLevel();
 
             _movesCounts.Content = "Moves: 0";
             _myProgressBar.ChangeValue(0);

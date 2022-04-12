@@ -17,7 +17,7 @@ namespace Box
                     GameMap.InfoCell(_transform.PositionI - 1, _transform.PositionJ) == CellState.Box)
                     return;
 
-                else if (GameMap.InfoCell(_transform.PositionI + 1, _transform.PositionJ) == CellState.Player)
+                else if (GameMap.InfoCell(_transform.PositionI, _transform.PositionJ) == CellState.Player)
                 {
                     GameMap.UpdateBarrelCell(_transform.PositionI, transform.PositionJ, _transform.PositionI - 1, transform.PositionJ);
 
@@ -35,7 +35,7 @@ namespace Box
                     GameMap.InfoCell(_transform.PositionI + 1, _transform.PositionJ) == CellState.Box)
                     return;
 
-                else if (GameMap.InfoCell(_transform.PositionI - 1, _transform.PositionJ) == CellState.Player)
+                else if (GameMap.InfoCell(_transform.PositionI, _transform.PositionJ) == CellState.Player)
                 {
                     GameMap.UpdateBarrelCell(_transform.PositionI, transform.PositionJ, _transform.PositionI + 1, transform.PositionJ);
 
@@ -52,7 +52,7 @@ namespace Box
                     GameMap.InfoCell(_transform.PositionI, _transform.PositionJ - 1) == CellState.Box)
                     return;
 
-                else if (GameMap.InfoCell(_transform.PositionI, _transform.PositionJ + 1) == CellState.Player)
+                else if (GameMap.InfoCell(_transform.PositionI, _transform.PositionJ) == CellState.Player)
                 {
                     GameMap.UpdateBarrelCell(_transform.PositionI, transform.PositionJ, _transform.PositionI, transform.PositionJ - 1);
 
@@ -69,7 +69,7 @@ namespace Box
                     GameMap.InfoCell(_transform.PositionI, _transform.PositionJ + 1) == CellState.Box)
                     return;
 
-                else if (GameMap.InfoCell(_transform.PositionI, _transform.PositionJ - 1) == CellState.Player)
+                else if (GameMap.InfoCell(_transform.PositionI, _transform.PositionJ) == CellState.Player)
                 {
                     GameMap.UpdateBarrelCell(_transform.PositionI, transform.PositionJ, _transform.PositionI, transform.PositionJ + 1);
 

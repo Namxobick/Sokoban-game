@@ -14,15 +14,19 @@ namespace Box
         {
             switch (e.Key)
             {
+                case Key.Up:
                 case Key.W:
                     Up?.Invoke(); 
                     break;
+                case Key.Down:
                 case Key.S:
                     Down?.Invoke();
                     break;
+                case Key.Left:
                 case Key.A:
                     Left?.Invoke();
                     break;
+                case Key.Right:
                 case Key.D:
                     Right?.Invoke();
                     break;

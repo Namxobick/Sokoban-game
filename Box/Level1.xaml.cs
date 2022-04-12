@@ -16,19 +16,22 @@ using System.Windows.Shapes;
 namespace Box
 {
 
-    public partial class Level1 : UserControl
+    public partial class Level1 : Ilevel
     {
+        private Position _player = new Position(0, 67, 3, 5);
+        private Position _barrel1 = new Position(-256, -195, 2, 4);
+        private Position _barrel2 = new Position(256, -195, 2, 6);
+        private Position _barrel3 = new Position(-256, 317, 4, 4);
+        private Position _barrel4 = new Position(256, 317, 4, 6);
+
         private static CellState[,] _playingFieldInfo = new CellState[7, 11];
 
         private List<(int, int)> _winCell = new List<(int, int)> { (1, 1), (1, 9), (5, 1), (5, 9)};
 
+        private List<Position> _objectPositions = new List<Position>();
+
         private int _movesForThreeStars = 38, _movesForTwoStars = 42, _movesForOneStar = 46;
 
-        public Action<int, int, int, int> OnInitPlayer;
-        public Action<int, int, int, int> OnInitBarrel1;
-        public Action<int, int, int, int> OnInitBarrel2;
-        public Action<int, int, int, int> OnInitBarrel3;
-        public Action<int, int, int, int> OnInitBarrel4;
 
         private void FillingInfoAboutPlayingField()
         {
@@ -65,19 +68,18 @@ namespace Box
         {
             Width = 1408;
             Height = 896;
+
+            _objectPositions.Add(_player);
+            _objectPositions.Add(_barrel1);
+            _objectPositions.Add(_barrel2);
+            _objectPositions.Add(_barrel3);
+            _objectPositions.Add(_barrel4);
         }
 
         public void Load()
         {
             InitializeComponent();
             FillingInfoAboutPlayingField();
-
-            OnInitPlayer?.Invoke(0, 67, 3, 5);
-
-            OnInitBarrel1?.Invoke(-256, -195, 2, 4);
-            OnInitBarrel2?.Invoke(256, -195, 2, 6);
-            OnInitBarrel3?.Invoke(-256, 317, 4, 4);
-            OnInitBarrel4?.Invoke(256, 317, 4, 6);
         }
 
         public CellState[,] GetMap()
@@ -103,6 +105,11 @@ namespace Box
         public int GetMovesForOneStar()
         {
             return _movesForOneStar;
+        }
+
+        public List<Position> GetObjectsPositions()
+        {
+            return _objectPositions;
         }
     }
 }

@@ -8,18 +8,51 @@ namespace Box
         Border, Free, Box, Player, End
     } 
 
-
-    public partial class Level0
+    public struct Position
     {
+        public int VisualMarginLeft, VisualMarginRight;
+        public int PositionIOnMap, PositionJOnMap;
+
+        public Position(int visualMarginLeft, int visualMarginRight, int positionIOnMap, int positionJOnMap)
+        {
+            this.VisualMarginLeft = visualMarginLeft;
+            this.VisualMarginRight = visualMarginRight;
+            this.PositionIOnMap = positionIOnMap;
+            this.PositionJOnMap = positionJOnMap;
+        }
+    }
+
+    public interface Ilevel
+    {
+        void Load();
+
+        CellState[,] GetMap();
+
+        List<(int, int)> GetWinCell();
+
+        int GetMovesForThreeStars();
+
+        int GetMovesForTwoStars();
+
+        int GetMovesForOneStar();
+
+        List<Position> GetObjectsPositions();
+    }
+
+    public partial class Level0 : Ilevel
+    {
+        private Position _player = new Position(-640, 58, 2, 2);
+        private Position _barrel1 = new Position(-128, 58, 2, 4);
+        private Position _barrel2 = new Position(128, -198, 1, 5);
+
         private static CellState[,] _playingFieldInfo = new CellState[5, 10];
 
-        private List<(int, int)> _winCell =new List<(int, int)> {(1, 1), (2, 7) };
+        private List<(int, int)> _winCell = new List<(int, int)> {(1, 1), (2, 7) };
+
+        private List<Position> _objectPositions = new List<Position>();
 
         private int _movesForThreeStars = 9, _movesForTwoStars = 10, _movesForOneStar = 11;
 
-        public Action<int, int, int, int> OnInitPlayer;
-        public Action<int, int, int, int> OnInitBarrel1;
-        public Action<int, int, int, int> OnInitBarrel2;
 
         private void FillingInfoAboutPlayingField()
         {
@@ -39,17 +72,19 @@ namespace Box
         public Level0()
         {
             Width = 1280;
-            Height = 640; 
+            Height = 640;
+
+            _objectPositions.Add(_player);
+            _objectPositions.Add(_barrel1);
+            _objectPositions.Add(_barrel2);
         }
 
         public void Load()
         {
             InitializeComponent();
             FillingInfoAboutPlayingField();
-            OnInitPlayer?.Invoke(-640, 67, 2, 2);
-            OnInitBarrel1?.Invoke(-128, 67, 2, 4);
-            OnInitBarrel2?.Invoke(128, -189, 1, 5);
         }
+
 
         public CellState[,] GetMap()
         {
@@ -76,6 +111,9 @@ namespace Box
             return _movesForOneStar;
         }
 
-
+        public List<Position> GetObjectsPositions()
+        {
+            return _objectPositions;
+        }
     }
 }
